@@ -49,3 +49,17 @@ body {
   @apply salon-button bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 shadow-sm
     dark:bg-gray-800 dark:text-purple-300 dark:border-purple-800 dark:hover:bg-gray-700;
 }
+
+.footer-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@supports not (backdrop-filter: blur(4px)) {
+  footer {
+    background: white !important; /* Light mode fallback */
+  }
+  .dark footer {
+    background: #111827 !important; /* Dark mode fallback */
+  }
+}
