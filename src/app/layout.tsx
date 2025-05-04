@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <ThemeProvider>
-          <div className="flex-1"> {/* This pushes footer down */}
+          <div className="flex-1">
             {children}
           </div>
           <Footer />

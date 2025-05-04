@@ -13,7 +13,7 @@
 }
 
 .dark {
-  --primary: #a78bfa; /* Purple-400 */
+  --primary: #8b5cf6; /* Purple-500 */
   --primary-dark: #8b5cf6; /* Purple-500 */
   --primary-light: #c4b5fd; /* Purple-300 */
   --background: #111827; /* Gray-900 */
@@ -31,35 +31,38 @@ body {
   transition-property: color, background-color, border-color;
   transition-duration: 200ms;
 }
-
-/* Custom styles for better salon look & feel */
-.salon-gradient {
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-}
-
 .salon-button {
   @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
 }
 
 .salon-button-primary {
-  @apply salon-button bg-purple-600 text-white hover:bg-purple-700 shadow-md hover:shadow-lg;
+  @apply salon-button text-white shadow-md hover:shadow-lg;
+  background-color: var(--primary);
+  color: white;
+}
+
+.salon-button-primary:hover {
+  background-color: var(--primary-dark);
 }
 
 .salon-button-secondary {
-  @apply salon-button bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 shadow-sm
-    dark:bg-gray-800 dark:text-purple-300 dark:border-purple-800 dark:hover:bg-gray-700;
+  @apply salon-button border shadow-sm;
+  background-color: white;
+  color: var(--primary);
+  border-color: #ddd; /* Optional light border */
 }
 
-.footer-blur {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.dark .salon-button-secondary {
+  background-color: var(--background); /* usually dark */
+  color: var(--primary);
+  border-color: var(--primary-dark);
 }
 
-@supports not (backdrop-filter: blur(4px)) {
-  footer {
-    background: white !important; /* Light mode fallback */
-  }
-  .dark footer {
-    background: #111827 !important; /* Dark mode fallback */
-  }
+.salon-button-secondary:hover {
+  background-color: var(--primary-light);
 }
+
+.dark .salon-button-secondary:hover {
+  background-color: #1f2937; /* Tailwind's gray-800 or var(--background) fallback */
+}
+

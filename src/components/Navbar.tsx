@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -38,7 +37,7 @@ export default function Navbar() {
         <div className="relative flex items-center justify-between h-16">
           {/* Left side - Logo */}
           <div className="absolute left-0">
-            <Link href="/" className="font-bold text-xl text-primary hover:text-primary-dark transition-colors">
+            <Link href="/" className="font-bold text-xl text-[var(--primary)] hover:text-[var(--primary-dark)] transition-colors">
               HQ Salon
             </Link>
           </div>
@@ -50,7 +49,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -62,15 +61,15 @@ export default function Navbar() {
           <div className="absolute right-0 flex items-center space-x-4">
             <Link
               href="/booking"
-              className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
+              className="px-4 py-2 rounded-md text-sm font-medium bg-[var(--primary)] text-white hover:bg-[var(--primary-dark)] transition-colors"
+            >
               Book Now
             </Link>
 
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                className="p-2 rounded-full bg-[var(--primary)/10] text-[var(--primary)] hover:bg-[var(--primary)/20] transition-colors"
                 aria-label="Toggle dark mode"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
