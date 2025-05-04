@@ -1,8 +1,13 @@
+import Navbar from '@/components/Navbar'
+import ServiceCard from '@/components/ServiceCard'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <main>
+      <Navbar />
+      <ServiceCard/>
+    </main>
   )
 }
 

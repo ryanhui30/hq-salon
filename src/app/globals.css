@@ -8,29 +8,30 @@
   --primary-dark: #7c3aed; /* Purple-600 */
   --primary-light: #a78bfa; /* Purple-400 */
   --background: #ffffff;
-  --foreground: #111827; /* Gray-900 */
-  --muted: #9ca3af; /* Gray-400 */
+  --foreground: #111827;
+  --muted: #9ca3af;
 }
 
 .dark {
-  --primary: #8b5cf6; /* Purple-500 */
-  --primary-dark: #8b5cf6; /* Purple-500 */
-  --primary-light: #c4b5fd; /* Purple-300 */
-  --background: #111827; /* Gray-900 */
-  --foreground: #f9fafb; /* Gray-50 */
-  --muted: #6b7280; /* Gray-500 */
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --primary-light: #c4b5fd;
+  --background: #111827;
+  --foreground: #f9fafb;
+  --muted: #6b7280;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Add smooth transitions for dark mode */
+/* Universal smoother transition */
 * {
-  transition-property: color, background-color, border-color;
-  transition-duration: 200ms;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
+
 .salon-button {
   @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
 }
@@ -38,7 +39,6 @@ body {
 .salon-button-primary {
   @apply salon-button text-white shadow-md hover:shadow-lg;
   background-color: var(--primary);
-  color: white;
 }
 
 .salon-button-primary:hover {
@@ -49,20 +49,21 @@ body {
   @apply salon-button border shadow-sm;
   background-color: white;
   color: var(--primary);
-  border-color: #ddd; /* Optional light border */
+  border-color: #ddd;
 }
 
 .dark .salon-button-secondary {
-  background-color: var(--background); /* usually dark */
+  background-color: var(--background);
   color: var(--primary);
   border-color: var(--primary-dark);
 }
 
 .salon-button-secondary:hover {
   background-color: var(--primary-light);
+  color: white;
 }
 
 .dark .salon-button-secondary:hover {
-  background-color: #1f2937; /* Tailwind's gray-800 or var(--background) fallback */
+  background-color: #1f2937;
+  color: var(--foreground);
 }
-

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="pt-16">
+    <section>
       <div className="relative bg-background pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="pt-16 pb-24 md:pt-24 md:pb-32 flex flex-col items-center">
@@ -14,7 +14,7 @@ export default function HeroSection() {
             {/* Hero content */}
             <div className="relative z-10 text-center max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-                Experience True <span className="text-primary">Beauty</span> and Self-Care
+                Experience True <span className="text-primary text-">Beauty</span> and Self-Care
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted">
                 Your premier destination for professional hair styling, skincare treatments, and complete beauty transformations.
