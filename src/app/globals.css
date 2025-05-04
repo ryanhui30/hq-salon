@@ -1,26 +1,51 @@
-@import "tailwindcss";
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
+  --primary: #8b5cf6; /* Purple-500 */
+  --primary-dark: #7c3aed; /* Purple-600 */
+  --primary-light: #a78bfa; /* Purple-400 */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827; /* Gray-900 */
+  --muted: #9ca3af; /* Gray-400 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --primary: #a78bfa; /* Purple-400 */
+  --primary-dark: #8b5cf6; /* Purple-500 */
+  --primary-light: #c4b5fd; /* Purple-300 */
+  --background: #111827; /* Gray-900 */
+  --foreground: #f9fafb; /* Gray-50 */
+  --muted: #6b7280; /* Gray-500 */
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+}
+
+/* Add smooth transitions for dark mode */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+}
+
+/* Custom styles for better salon look & feel */
+.salon-gradient {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+}
+
+.salon-button {
+  @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+}
+
+.salon-button-primary {
+  @apply salon-button bg-purple-600 text-white hover:bg-purple-700 shadow-md hover:shadow-lg;
+}
+
+.salon-button-secondary {
+  @apply salon-button bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 shadow-sm
+    dark:bg-gray-800 dark:text-purple-300 dark:border-purple-800 dark:hover:bg-gray-700;
 }
