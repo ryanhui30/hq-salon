@@ -1,3 +1,4 @@
+// components/Footer.jsx
 import { Instagram, Facebook } from "lucide-react";
 
 function Footer() {
@@ -33,7 +34,7 @@ function Footer() {
               <Facebook className="h-4 w-4" />
             </a>
             <a href="tel:+1234567890" className="text-xs text-muted hover:text-primary transition-colors whitespace-nowrap">
-              (123) 456-7890
+              (415) 666-0288
             </a>
           </div>
 

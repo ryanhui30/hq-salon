@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="relative flex items-center justify-between h-16">
           {/* Left side - Logo */}
           <div className="absolute left-0">
-            <Link href="/" className="font-bold text-xl text-primary">
+            <Link href="/" className="font-bold text-xl text-primary hover:text-primary-dark transition-colors">
               HQ Salon
             </Link>
           </div>
@@ -50,7 +50,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-primary-light/10 transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -62,15 +62,15 @@ export default function Navbar() {
           <div className="absolute right-0 flex items-center space-x-4">
             <Link
               href="/booking"
-              className="salon-button-primary px-4 py-2 text-sm"
-            >
+              className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
               Book Now
             </Link>
 
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full bg-primary-light/10 text-primary hover:bg-primary-light/20 transition-colors"
+                className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
                 aria-label="Toggle dark mode"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
